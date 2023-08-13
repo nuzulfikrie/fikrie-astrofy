@@ -2,8 +2,13 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
+import { configDev } from "../siteConstants/siteSettings";
+import projects from "../data/projects.json";
+let apiUrl = `https://dev.to/api/articles?username=${configDev.devtoUsername}`;
+const response = await fetch(apiUrl);
 
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = await response.json();
+posts.sort((a, b) => b.published_at.localeCompare(a.published_at));
 
 const last_posts = posts.slice(0, 3);
 ---
@@ -11,64 +16,85 @@ const last_posts = posts.slice(0, 3);
 <BaseLayout sideBarActiveItemID="home">
   <div class="pb-12 mt-5">
     <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Manuel Ernesto</div>
-    <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div>
+    <div class="text-5xl font-bold">I am {configDev.developerName}</div>
+    <div class="text-3xl py-3 font-bold">{configDev.role}</div>
     <div class="py-2">
       <text class="text-lg">
-        This is <b>Astrofy</b> a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS.
-        Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed. I hope you find
-        it useful!
+        {configDev.descriptionString}
       </text>
     </div>
     <div class="mt-8">
-      <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Let's connect!</a>
-      <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="btn btn-outline ml-5">
+      <!-- twitter logo button in tailwind x color r 30 g48 b80  -->
+      <a
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        href="https://twitter.com/manuelernestog"
+        target="_blank"
+      >
+        <i class="fa fa-twitter mr-2"></i>
+        Let's connect on X!</a
+      >
+      <a
+        href="https://github.com/manuelernestog/astrofy"
+        target="_blank"
+        class="btn btn-outline ml-5"
+      >
         Get This template
       </a>
     </div>
   </div>
 
   <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+    <div class="text-3xl w-full font-bold mb-2">
+      <!-- add fontawesome icon work -->
+      <i class="fa fa-briefcase"></i> Projects I am working on now {"</>"}
+    </div>
   </div>
+  <!-- this part loads data from json file located in data folder and then use map to print out -->
 
-  <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
-  />
-
+  <!-- if empty show no project -->
+  {
+    projects.length === 0 ? (
+      <div class="text-xl w-full font-bold mb-2">
+        No project to show at the moment .. why not hire me to build one for
+        you?
+      </div>
+    ) : (
+      projects.map((project, index) => (
+        <div key={index}>
+          <HorizontalCard
+            title={project.title}
+            img={project.img}
+            desc={project.desc}
+            url={project.url}
+            badge={
+              project.is_foss
+                ? "FOSS"
+                : project.title === "Demo Project 1"
+                ? "NEW"
+                : ""
+            }
+          />
+          {index < projects.length - 1 ? <div class="divider my-0" /> : ""}
+        </div>
+      ))
+    )
+  }
   <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">
+      Latest from from my blog at Dev.To
+    </div>
   </div>
 
   {
     last_posts.map((post) => (
       <>
         <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/blog/" + post.slug}
+          title={post.title}
+          img={post.social_image}
+          desc={post.description}
+          url={post.canonical_url}
+          badge={post.tags}
           target="_self"
-          badge={post.data.badge}
         />
         <div class="divider my-0" />
       </>
