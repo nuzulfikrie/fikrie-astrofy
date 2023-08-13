@@ -23,7 +23,7 @@ pnpm-debug.log*
 
 # Firebase
 .firebasesrc
-
+.firebaserc
 #vscode workspace
 *.code-workspace
 
