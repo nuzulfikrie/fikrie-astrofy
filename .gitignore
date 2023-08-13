@@ -20,3 +20,10 @@ pnpm-debug.log*
 
 # Astro
 .astro/
+
+# Firebase
+.firebasesrc
+
+#vscode workspace
+*.code-workspace
+
