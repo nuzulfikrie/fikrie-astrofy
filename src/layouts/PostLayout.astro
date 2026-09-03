@@ -30,9 +30,9 @@ import { Image } from "@astrojs/image/components";
         )
       }
       <h1 class="title my-2 text-4xl font-bold">{title}</h1>
-      {pubDate && <time>{displayDate}</time>}
+      {pubDate && <time class="tl-sub">{displayDate}</time>}
       <br />
-      {badge && <div class="badge badge-secondary my-1">{badge}</div>}
+      {badge && <span class="tui-badge">{badge}</span>}
       {
         updatedDate && (
           <div>
@@ -41,7 +41,7 @@ import { Image } from "@astrojs/image/components";
           </div>
         )
       }
-      <div class="divider my-2"></div>
+      <div class="tui-hr" aria-hidden="true">{"─".repeat(120)}</div>
       <slot />
     </article>
   </main>

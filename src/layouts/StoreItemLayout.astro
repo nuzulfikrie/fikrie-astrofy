@@ -35,7 +35,7 @@ import { Image } from "@astrojs/image/components";
       <div class="">
         <h1 class="title my-2 text-4xl font-bold">
           {title}
-          {badge && <div class="badge badge-secondary mx-2">{badge}</div>}
+          {badge && <span class="tui-badge mx-2">{badge}</span>}
         </h1>
         <div class="flex place-content-between items-center">
           <div class="grow md:grow-0">
@@ -45,16 +45,16 @@ import { Image } from "@astrojs/image/components";
           <div>
             {
               custom_link && (
-                <a class="btn btn-outline grow md:grow-0 ml-4" href={custom_link} target="_blank">
-                  {custom_link_label}
+                <a class="tui-btn grow md:grow-0 ml-4" href={custom_link} target="_blank">
+                  [ {custom_link_label} ]
                 </a>
               )
             }
-            <a class="btn btn-primary grow md:grow-0 ml-4" href={checkoutUrl} target="_blank">Buy Now</a>
+            <a class="tui-btn tui-btn-primary grow md:grow-0 ml-4" href={checkoutUrl} target="_blank">[ buy now ]</a>
           </div>
         </div>
       </div>
-      <div class="divider my-2"></div>
+      <div class="tui-hr" aria-hidden="true">{"─".repeat(120)}</div>
       <slot />
     </article>
   </main>

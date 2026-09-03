@@ -22,7 +22,8 @@
     "dayjs": "^1.11.9",
     "dotenv": "^16.3.1",
     "font-awesome": "^4.7.0",
-    "sharp": "^0.32.1"
+    "sharp": "^0.32.1",
+    "sitemap": "7.1.1"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9"

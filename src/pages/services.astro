@@ -3,9 +3,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 ---
 
-<BaseLayout title="Projects" sideBarActiveItemID="services">
-  <div>
-    <div class="text-3xl w-full font-bold mb-5">Services Offered</div>
+<BaseLayout title="Services" sideBarActiveItemID="services">
+  <div class="tui-section">
+    <span>services offered</span>
   </div>
 
   <HorizontalCard
@@ -14,14 +14,12 @@ import HorizontalCard from "../components/HorizontalCard.astro";
     desc="I can build you a website from scratch or using a CMS like WordPress."
     url="#"
   />
-  <div class="divider my-0"></div>
   <HorizontalCard
     title="Landing Page design"
     img="https://images.unsplash.com/photo-1572198404182-2c115d89fb26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80"
     desc="I can design you a landing page for your product or service."
     url="#"
   />
-  <div class="divider my-0"></div>
   <HorizontalCard
     title="Custom Web System"
     img="/post_img.webp"

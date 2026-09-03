@@ -12,34 +12,26 @@ const {
   custom_link = false,
   custom_link_label = "",
 } = Astro.props;
-import { Image } from "@astrojs/image/components";
 ---
 
-<div class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]">
+<div class="tui-card">
   <a href={url}>
-    <div class="hero-content flex-col md:flex-row">
+    <div class="tui-card-head">
+      <span>{title}</span>
+      {badge && <span class="tui-badge">{badge}</span>}
+    </div>
+    <div class="tui-card-body">
       {
         img && (
-          <Image
-            aspectRatio="16:9"
-            width={750}
-            format="webp"
-            src={img}
-            alt={title}
-            class="max-w-full md:max-w-[13rem] rounded-lg"
-          />
+          <img src={img} alt={title} class="tui-card-img" loading="lazy" />
         )
       }
-      <div class="grow w-full p-5 md:p-0">
-        <h1 class="text-xl font-bold">
-          {title}
-          {badge && <div class="badge badge-secondary mx-2">{badge}</div>}
-        </h1>
+      <div class="grow w-full">
         <div>
-          <span class="text-xl mr-1"> {pricing}</span>
-          <span class="text-md opacity-50 line-through">{oldPricing}</span>
+          <span class="text-xl mr-2">{pricing}</span>
+          <span class="line-through opacity-50">{oldPricing}</span>
         </div>
-        <p class="py-1 text-1xl">{desc}</p>
+        <p class="tui-card-desc">{desc}</p>
       </div>
     </div>
   </a>

@@ -1,22 +1,36 @@
 ---
 const { sideBarActiveItemID } = Astro.props;
-const activeClass = "bg-base-300"; // For primary color replace with `active` class
+const activeClass = "active";
 ---
 
-<ul class="menu grow shrink menu-md overflow-y-auto">
-  <li><a class="py-3 text-base" id="home" href="/">Home</a></li>
-  <li><a class="py-3 text-base" id="projects" href="/projects">Projects</a></li>
-  <li><a class="py-3 text-base" id="services" href="/services">Services</a></li>
-  <li><a class="py-3 text-base" id="cv" href="/cv">CV</a></li>
+<nav aria-label="Primary" class="contents">
+<ul class="side-nav grow shrink overflow-y-auto">
+  <li>
+    <a id="home" href="/"><span class="ps1">$</span> cd ~/home</a>
+  </li>
+  <li>
+    <a id="projects" href="/projects"
+      ><span class="ps1">$</span> cd ~/projects</a
+    >
+  </li>
+  <li>
+    <a id="services" href="/services"
+      ><span class="ps1">$</span> cd ~/services</a
+    >
+  </li>
+  <li>
+    <a id="cv" href="/cv"><span class="ps1">$</span> cat ~/cv.txt</a>
+  </li>
   <li>
     <a
-      class="py-3 text-base"
       href="mailto:nuzulfikriesalam@fikriesalam.dev"
       target="_blank"
-      referrerpolicy="no-referrer-when-downgrade">Contact</a
+      referrerpolicy="no-referrer-when-downgrade"
+      ><span class="ps1">$</span> mail -s "hello"</a
     >
   </li>
 </ul>
+</nav>
 
 <script
   define:vars={{

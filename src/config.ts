@@ -3,4 +3,4 @@
 
 export const SITE_TITLE = "Nuzul Fikrie Salam - Full Stack Developer ⚡️";
 export const SITE_DESCRIPTION =
-  "Nuzul Fikrie Salam - Full Stack Developer ⚡️.";
+  "Portfolio and CV of Nuzul Fikrie Salam — Senior Full Stack Developer based in Seri Kembangan, Selangor, Malaysia. Laravel, React, Azure, AWS, Linux.";

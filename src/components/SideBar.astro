@@ -2,32 +2,28 @@
 import SideBarFooter from "./SideBarFooter.astro";
 import { Image } from "@astrojs/image/components";
 import SideBarMenu from "./SideBarMenu.astro";
+import { configDev } from "../siteConstants/siteSettings";
 const { sideBarActiveItemID } = Astro.props;
 ---
 
 <div class="drawer-side z-40">
   <label for="my-drawer" class="drawer-overlay"></label>
-  <aside
-    class="px-2 pt-2 h-auto min-h-full w-[19rem] bg-base-200 text-base-content flex flex-col"
-  >
-    <div class="w-fit mx-auto mt-5 mb-6">
-      <a href="/">
-        <div
-          class="avatar transition ease-in-out hover:scale-[102%] block m-auto"
-        >
-          <div class="w-[8.5rem]">
-            <Image
-              class="mask mask-circle"
-              aspectRatio="1:1"
-              format="webp"
-              width={300}
-              height={300}
-              src="/profile.jpg"
-              alt="Profile image"
-            />
-          </div>
-        </div>
+  <aside class="sidebar">
+    <div class="sidebar-host">
+      guest@fikriesalam.dev:~$ <span class="cursor">█</span>
+    </div>
+    <div class="profile-frame">
+      <a href="/" aria-label="Home">
+        <Image
+          aspectRatio="1:1"
+          format="webp"
+          width={300}
+          height={300}
+          src="/profile.jpg"
+          alt="Profile image"
+        />
       </a>
+      <div class="profile-caption">── {configDev.developerName} ──</div>
     </div>
     <SideBarMenu sideBarActiveItemID={sideBarActiveItemID} />
     <SideBarFooter />

@@ -1,103 +1,469 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TimeLineElement from "../components/cv/TimeLine.astro";
+import { configDev } from "../siteConstants/siteSettings";
+
+const cvDescription =
+  "CV of Nuzul Fikrie Salam — Senior Full Stack Developer based in Seri Kembangan, Selangor, Malaysia. 10+ years across full stack web development, cloud (Azure/AWS), and system architecture.";
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  mainEntity: {
+    "@type": "Person",
+    name: "Nuzul Fikrie Salam",
+    givenName: "Nuzul Fikrie",
+    familyName: "Salam",
+    jobTitle: "Senior Full Stack Developer",
+    email: "mailto:nuzulfikrie@gmail.com",
+    url: "https://fikriesalam.dev/cv",
+    image: "https://fikriesalam.dev/profile.jpg",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Seri Kembangan",
+      addressRegion: "Selangor",
+      addressCountry: "MY",
+    },
+    sameAs: [
+      configDev.githubLink,
+      configDev.linkedInLink,
+      configDev.devTolink,
+      configDev.xLink,
+    ],
+    description:
+      "Full stack developer innovating at the intersection of software engineering, cloud solutions, and system architecture — building future-ready systems from homelab to production.",
+    knowsAbout: [
+      "PHP",
+      "Laravel",
+      "Livewire",
+      "CakePHP",
+      "JavaScript",
+      "TypeScript",
+      "Node.js",
+      "React",
+      "Next.js",
+      "Python",
+      "Shell Scripting",
+      "MySQL",
+      "REST API",
+      "Docker",
+      "Microsoft Azure",
+      "AWS",
+      "Linux",
+      "Vite",
+      "PHPUnit",
+      "Pest",
+    ],
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "Universiti Teknologi MARA (UiTM)",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Shah Alam",
+        addressRegion: "Selangor",
+        addressCountry: "MY",
+      },
+    },
+    worksFor: {
+      "@type": "Organization",
+      name: "Universiti Kuala Lumpur (UniKL)",
+    },
+    memberOf: [
+      {
+        "@type": "OrganizationRole",
+        roleName: "Senior Full Stack Developer / IT Solution Consultant",
+        startDate: "2025-07",
+        memberOf: {
+          "@type": "Organization",
+          name: "Universiti Kuala Lumpur (UniKL)",
+        },
+      },
+      {
+        "@type": "OrganizationRole",
+        roleName: "Software Developer",
+        startDate: "2025-01",
+        endDate: "2025-07",
+        memberOf: { "@type": "Organization", name: "3TDS Solution Sdn Bhd" },
+      },
+      {
+        "@type": "OrganizationRole",
+        roleName: "Developer",
+        startDate: "2024-03",
+        endDate: "2024-12",
+        memberOf: { "@type": "Organization", name: "MARC DATA Sdn Bhd" },
+      },
+      {
+        "@type": "OrganizationRole",
+        roleName: "Full Stack Software Engineer / Technical Lead",
+        startDate: "2022-12",
+        endDate: "2024-03",
+        memberOf: { "@type": "Organization", name: "The Eagle Center" },
+      },
+      {
+        "@type": "OrganizationRole",
+        roleName: "Chief Technology Officer",
+        startDate: "2019-03",
+        endDate: "2022-12",
+        memberOf: {
+          "@type": "Organization",
+          name: "Grounded Learning Malaysia",
+        },
+      },
+      {
+        "@type": "OrganizationRole",
+        roleName: "Test Product Engineer",
+        startDate: "2014-08",
+        endDate: "2019-03",
+        memberOf: {
+          "@type": "Organization",
+          name: "NXP Semiconductors Malaysia (formerly Freescale Semiconductor)",
+        },
+      },
+      {
+        "@type": "OrganizationRole",
+        roleName: "Graduate Engineer Trainee",
+        startDate: "2013-10",
+        endDate: "2014-08",
+        memberOf: {
+          "@type": "Organization",
+          name: "Freescale Semiconductor (M) Sdn Bhd",
+        },
+      },
+    ],
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "certification",
+        name: "Microsoft Certified: Azure Solutions Architect Expert",
+        recognizedBy: { "@type": "Organization", name: "Microsoft" },
+        url: "https://www.credly.com/badges/ea930bb1-c0b5-4649-a1b1-1918f9a37c82",
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "certification",
+        name: "Microsoft Certified: Azure Security Engineer Associate",
+        recognizedBy: { "@type": "Organization", name: "Microsoft" },
+        url: "https://www.credly.com/earner/earned/badge/8a6a58be-a9e9-46e2-af52-05eb56ce23a0",
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "certification",
+        name: "Microsoft Certified: Azure Administrator Associate",
+        recognizedBy: { "@type": "Organization", name: "Microsoft" },
+        url: "https://www.credly.com/badges/72392661-e285-42c5-8cee-fde5cfeb689d/public_url",
+      },
+    ],
+  },
+};
 ---
 
-<BaseLayout title="Resume" sideBarActiveItemID="cv">
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Profile</div>
-  </div>
+<BaseLayout
+  title="CV — Nuzul Fikrie Salam | Senior Full Stack Developer"
+  description={cvDescription}
+  sideBarActiveItemID="cv"
+>
+  <script
+    slot="head"
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(personSchema)}
+  />
 
-  <div class="mb-10 text-justify">
-    My name is Nuzul Fikrie Salam from Malaysia, worked as a fullstack
-    developer, experienced in developing web applications,automations and server
-    configuration.
-  </div>
+  <header class="mb-6">
+    <h1 class="text-3xl font-bold">Nuzul Fikrie Salam</h1>
+    <address class="not-italic mt-1">
+      Seri Kembangan, Selangor, Malaysia ·
+      <a href="mailto:nuzulfikrie@gmail.com">nuzulfikrie@gmail.com</a>
+    </address>
+  </header>
 
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Education</div>
-  </div>
+  <section aria-labelledby="profile">
+    <h2 id="profile" class="tui-section">
+      <span>profile</span>
+    </h2>
+    <p class="mb-10 text-justify">
+      Full stack developer with 10+ years of experience, innovating at the
+      intersection of software engineering, cloud solutions, and system
+      architecture — building future-ready systems from homelab to production.
+      Currently a core engineer on UNIKL-UMS, the academic and admissions
+      platform of one of Malaysia's largest private universities.
+    </p>
+  </section>
 
-  <div class="time-line-container grid gap-4 mb-10">
-    <TimeLineElement
-      title="Bachelor Of Electrical Engineering (Hons) Electronics"
-      subtitle="[2008] to [2012] at Universiti Teknologi MARA (UiTM), Shah Alam, Selangor, Malaysia"
-    />
-  </div>
+  <section aria-labelledby="experience">
+    <h2 id="experience" class="tui-section">
+      <span>experience</span>
+    </h2>
 
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Experience</div>
-  </div>
-
-  <div class="time-line-container mb-10">
-    <TimeLineElement
-      title="Test Process Engineer"
-      subtitle="From 2014 to 2019 at NXP, Petaling Jaya PJ, Malaysia"
-    >
-      In charge of test process, experienced in using ATE and test process
-      automation, developed manufacturing applications.
-    </TimeLineElement>
-    <TimeLineElement
-      title="CTO at Grounded Learning Malaysia"
-      subtitle="From 2019 to 2022"
-    >
-      Helped in product development, in charge of IT infra, and
-      development.Created web applications for the company to use.
-    </TimeLineElement>
-    <TimeLineElement
-      title="Tech lead,full stack developer at The Eagle Center Malaysia"
-      subtitle="From 2022 to Present at The Eagle Center, Seri Kembangan, Malaysia"
-    >
-      In charge of IT infra, and development.Created web applications for the
-      company to use ,migrated apps from AWS to Azure.
-    </TimeLineElement>
-  </div>
-
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Certifications</div>
-  </div>
-
-  <ul class="list-disc mx-6 mb-10 grid gap-2">
-    <li>
-      <a
-        href="https://www.credly.com/badges/72392661-e285-42c5-8cee-fde5cfeb689d/public_url"
-        target="_blank"
+    <div class="time-line-container mb-10">
+      <TimeLineElement
+        title="Senior Full Stack Developer / IT Solution Consultant — Universiti Kuala Lumpur (UniKL)"
+        subtitle="Kuala Lumpur, Malaysia"
+        startDate="2025-07"
       >
-        Microsoft Certified: Azure Administrator Associate (Issued by Microsoft
-        )</a
-      >
-    </li>
-    <li>
-      <a
-        href="https://www.credly.com/earner/earned/badge/8a6a58be-a9e9-46e2-af52-05eb56ce23a0"
-        target="_blank"
-      >
-        Microsoft Certified: Azure Security Engineer Associate (Issued by
-        Microsoft )</a
-      >
-    </li>
-    <li>
-      <a
-        href="https://www.credly.com/badges/ea930bb1-c0b5-4649-a1b1-1918f9a37c82"
-        target="_blank"
-      >
-        Microsoft Certified: Azure Solutions Architect Expert (Issued by
-        Microsoft )</a
-      >
-    </li>
-  </ul>
+        <ul class="list-disc mx-6 grid gap-1">
+          <li>
+            Core engineer on UNIKL-UMS, a Laravel + Livewire platform handling
+            academic and admission operations for one of Malaysia's largest
+            private universities.
+          </li>
+          <li>
+            Delivered end-to-end admission features: APEL field-of-study
+            support, interview scheduling/notification workflows, decline-page
+            handling, and registration exception flows.
+          </li>
+          <li>
+            Implemented Microsoft SSO stateless OAuth authentication,
+            eliminating intermittent login failures that were affecting student
+            onboarding.
+          </li>
+          <li>
+            Designed and built a hardened OTP framework for secure
+            admission-flow verification, plus reusable Livewire filter
+            components adopted across all admin screens.
+          </li>
+          <li>
+            Led frontend modernization: extracted inline scripts into per-page
+            Vite modules and introduced i18n translation support across
+            admission screens.
+          </li>
+          <li>
+            Improved offer letter template handling and acceptance/selection
+            table filtering; optimized critical selection queries using
+            database views, reducing query time significantly.
+          </li>
+          <li>
+            Wrapped critical write paths in database transactions to ensure
+            data integrity; added and maintained PHPUnit/Pest test coverage
+            for all features delivered.
+          </li>
+          <li>
+            Tech stack: Laravel, Livewire, Vite, MySQL, Microsoft Azure AD
+            (SSO), PHPUnit, Pest.
+          </li>
+        </ul>
+      </TimeLineElement>
 
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Skills</div>
-  </div>
+      <TimeLineElement
+        title="Software Developer — 3TDS Solution Sdn Bhd"
+        startDate="2025-01"
+        endDate="2025-07"
+      >
+        <ul class="list-disc mx-6 grid gap-1">
+          <li>
+            Supported, maintained, and developed various government/GLC
+            applications contracted by clients.
+          </li>
+          <li>
+            Managed and deployed applications for testing and verification on
+            servers, and helped the team deliver code to customer needs and
+            agreed specifications — contributing to a 20% increase in daily
+            workflow effectiveness.
+          </li>
+          <li>
+            Tech stack: Linux, MySQL, REST API, Laravel PHP, Node.js, React,
+            Docker, Next.js.
+          </li>
+        </ul>
+      </TimeLineElement>
 
-  <ul class="list-disc md:columns-5 columns-2 mx-6">
-    <li>PHP</li>
-    <li>Python</li>
-    <li>Javascripts</li>
-    <li>Shell scripts</li>
-    <li>Azure</li>
-    <li>AWS</li>
-    <li>Linux Servers</li>
-  </ul>
+      <TimeLineElement
+        title="Developer — MARC DATA Sdn Bhd"
+        startDate="2024-03"
+        endDate="2024-12"
+      >
+        <ul class="list-disc mx-6 grid gap-1">
+          <li>
+            Developed the MARC DATA product delivery platform: a React SPA on
+            a Laravel backend.
+          </li>
+          <li>
+            Completed a side project with a Node.js backend and React frontend
+            for PDF text extraction using AWS Textract.
+          </li>
+          <li>
+            Utilized SaaS, LAMP stack, and Next.js in the development
+            pipeline.
+          </li>
+          <li>
+            Tools: Notion, Wrike, Cursor IDE, ChatGPT, Microsoft Office.
+          </li>
+        </ul>
+      </TimeLineElement>
+
+      <TimeLineElement
+        title="Full Stack Software Engineer / Technical Lead — The Eagle Center"
+        subtitle="Seri Kembangan, Malaysia"
+        startDate="2022-12"
+        endDate="2024-03"
+      >
+        <ul class="list-disc mx-6 grid gap-1">
+          <li>
+            Led the full migration of company systems and backups from AWS to
+            Azure, including automated backups integrated with Azure Storage
+            Services.
+          </li>
+          <li>
+            Implemented Stripe API integration and webhooks for real-time
+            payment status notifications.
+          </li>
+          <li>
+            Guided interns in web development and the software development
+            lifecycle.
+          </li>
+          <li>
+            Helped the company form a technical partnership with Microsoft
+            under the cloud storage program.
+          </li>
+          <li>
+            Tech stack: Linux, MySQL, Azure, REST API, CakePHP, Node.js,
+            React.
+          </li>
+        </ul>
+      </TimeLineElement>
+
+      <TimeLineElement
+        title="Chief Technology Officer — Grounded Learning Malaysia"
+        startDate="2019-03"
+        endDate="2022-12"
+      >
+        <ul class="list-disc mx-6 grid gap-1">
+          <li>
+            First engineer of the company; in charge of the entire IT
+            operation and all applications running on AWS.
+          </li>
+          <li>
+            Involved in a patent: an intellectual knowledge ideation
+            management system.
+          </li>
+          <li>
+            The EAGLE Navigator product won a Gold Medal under the Digital
+            Education category.
+          </li>
+        </ul>
+      </TimeLineElement>
+
+      <TimeLineElement
+        title="Test Product Engineer — NXP Semiconductors Malaysia (formerly Freescale Semiconductor)"
+        subtitle="Petaling Jaya, Malaysia"
+        startDate="2014-08"
+        endDate="2019-03"
+      >
+        <ul class="list-disc mx-6 grid gap-1">
+          <li>
+            Oversaw the semiconductor testing process, ensuring finished
+            products met the quality standards set by both the company and
+            customers.
+          </li>
+          <li>
+            Developed internal web applications for the Final Manufacturing
+            Operation, focused on reporting and automation — full stack on
+            Perl CGI and PHP.
+          </li>
+          <li>
+            Met 95% of deadlines and responded to 100% of inquiries across 3
+            consecutive years.
+          </li>
+          <li>
+            Implemented an input lot combination system that increased test
+            process efficiency by ~10%, winning a Technical Excellence award.
+          </li>
+        </ul>
+      </TimeLineElement>
+
+      <TimeLineElement
+        title="Graduate Engineer Trainee — Freescale Semiconductor (M) Sdn Bhd"
+        startDate="2013-10"
+        endDate="2014-08"
+      >
+        <ul class="list-disc mx-6 grid gap-1">
+          <li>
+            Involved in the product testing process and evaluation of final
+            products.
+          </li>
+          <li>
+            Created product databases, performed production IT maintenance,
+            and ran QC testing and data collection.
+          </li>
+        </ul>
+      </TimeLineElement>
+    </div>
+  </section>
+
+  <section aria-labelledby="education">
+    <h2 id="education" class="tui-section">
+      <span>education</span>
+    </h2>
+
+    <div class="time-line-container mb-10">
+      <TimeLineElement
+        title="Bachelor of Electrical Engineering (Hons) Electronics — Universiti Teknologi MARA (UiTM)"
+        subtitle="Shah Alam, Selangor, Malaysia"
+        startDate="2008"
+        endDate="2012"
+      />
+    </div>
+  </section>
+
+  <section aria-labelledby="certifications">
+    <h2 id="certifications" class="tui-section">
+      <span>certifications</span>
+    </h2>
+
+    <ul class="list-disc mx-6 mb-10 grid gap-2">
+      <li>
+        <a
+          href="https://www.credly.com/badges/ea930bb1-c0b5-4649-a1b1-1918f9a37c82"
+          target="_blank"
+          rel="noopener"
+        >
+          Microsoft Certified: Azure Solutions Architect Expert (Issued by
+          Microsoft)
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.credly.com/earner/earned/badge/8a6a58be-a9e9-46e2-af52-05eb56ce23a0"
+          target="_blank"
+          rel="noopener"
+        >
+          Microsoft Certified: Azure Security Engineer Associate (Issued by
+          Microsoft)
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.credly.com/badges/72392661-e285-42c5-8cee-fde5cfeb689d/public_url"
+          target="_blank"
+          rel="noopener"
+        >
+          Microsoft Certified: Azure Administrator Associate (Issued by
+          Microsoft)
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="skills">
+    <h2 id="skills" class="tui-section">
+      <span>skills</span>
+    </h2>
+
+    <ul class="list-disc md:columns-4 columns-2 mx-6">
+      <li>PHP (Laravel, Livewire, CakePHP)</li>
+      <li>JavaScript / TypeScript</li>
+      <li>Node.js</li>
+      <li>React / Next.js</li>
+      <li>Python</li>
+      <li>Shell scripting</li>
+      <li>MySQL</li>
+      <li>REST APIs</li>
+      <li>Docker</li>
+      <li>Microsoft Azure</li>
+      <li>AWS</li>
+      <li>Linux servers</li>
+      <li>Vite</li>
+      <li>PHPUnit / Pest</li>
+    </ul>
+  </section>
 </BaseLayout>

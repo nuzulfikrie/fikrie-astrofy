@@ -1,0 +1,30 @@
+# Nuzul Fikrie Salam — fikriesalam.dev
+
+> Personal site of Nuzul Fikrie Salam, a Senior Full Stack Developer based in
+> Seri Kembangan, Selangor, Malaysia. 10+ years of experience across full
+> stack web development, cloud platforms (Microsoft Azure, AWS), and system
+> architecture. Currently Senior Full Stack Developer / IT Solution
+> Consultant at Universiti Kuala Lumpur (UniKL), working on the UNIKL-UMS
+> academic and admissions platform (Laravel + Livewire). Contact:
+> nuzulfikrie@gmail.com
+
+## Pages
+
+- [Home](https://fikriesalam.dev/): introduction, current projects, latest blog posts
+- [CV / Resume](https://fikriesalam.dev/cv): full career history, education, certifications (Microsoft Azure x3), and skills, with schema.org Person structured data
+- [Projects](https://fikriesalam.dev/projects): portfolio projects
+- [Services](https://fikriesalam.dev/services): freelance services offered
+- [Blog](https://fikriesalam.dev/blog): articles (also published on dev.to/nuzulfikrie)
+
+## Tech stack highlights
+
+- PHP: Laravel, Livewire, CakePHP, PHPUnit/Pest
+- JavaScript/TypeScript: Node.js, React, Next.js, Vite
+- Cloud & infra: Microsoft Azure, AWS, Linux, Docker, MySQL, REST APIs
+
+## Links
+
+- GitHub: https://github.com/nuzulfikrie
+- LinkedIn: https://www.linkedin.com/in/nuzul-fikrie-b828b855/
+- dev.to: https://dev.to/nuzulfikrie
+- Sitemap: https://fikriesalam.dev/sitemap-index.xml

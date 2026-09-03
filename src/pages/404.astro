@@ -2,11 +2,23 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title = "404: Not Found" includeSidebar={false}>
-  <div class="text-center">
-    <h1 class="text-9xl font-bold mb-4">🏝</h1>
-    <h1 class="text-9xl font-bold mb-2">404</h1>
-    <h3 class="text-2xl">The page you're looking for couldn't be found.</h3>
-    <a class="btn btn-accent mt-9" href="/">Home</a>
+<BaseLayout title="404: Not Found" includeSidebar={false}>
+  <div class="tui-window max-w-xl mx-auto mt-10">
+    <div class="tui-window-bar">
+      <span>guest@fikriesalam.dev: ~</span>
+      <span>bash — 80x24</span>
+    </div>
+    <div class="tui-window-body">
+      <p class="tui-cmd"><span class="ps1">$</span> cd /this-page</p>
+      <p class="tui-out error">
+        bash: cd: /this-page: No such file or directory
+      </p>
+      <p class="tui-cmd"><span class="ps1">$</span> echo $?</p>
+      <p class="tui-out big">404</p>
+      <p class="tui-out dim mb-6">
+        The page you're looking for couldn't be found.
+      </p>
+      <a class="tui-btn tui-btn-primary" href="/">[ return home ]</a>
+    </div>
   </div>
 </BaseLayout>
