@@ -27,7 +27,13 @@ jobs:
         run: npm run lint
 
       - name: Audit for critical vulnerabilities
-        run: npm audit --audit-level=critical
+        run: |
+          for i in 1 2 3; do
+            npm audit --audit-level=critical && exit 0
+            echo "Audit attempt $i failed, retrying in 30s..."
+            sleep 30
+          done
+          exit 1
 
       - name: Build
         run: npm run build
