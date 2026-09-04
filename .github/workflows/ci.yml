@@ -31,3 +31,9 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Deploy to Firebase Hosting
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: npx --yes firebase-tools deploy --only hosting --project fikriesalam-static-devsite --token "$FIREBASE_TOKEN"
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
