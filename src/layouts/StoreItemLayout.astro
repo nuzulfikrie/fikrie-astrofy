@@ -1,10 +1,22 @@
 ---
-import { StoreSchema } from "../content/config";
 import BaseLayout from "./BaseLayout.astro";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
 
-export interface Props extends StoreSchema {}
+export interface Props {
+  title: string;
+  description: string;
+  updatedDate: Date;
+  heroImage?: ImageMetadata;
+  pricing?: string;
+  oldPricing?: string;
+  checkoutUrl?: string;
+  badge?: string;
+  custom_link?: string;
+  custom_link_label?: string;
+}
 
 const {
   title,
@@ -21,15 +33,14 @@ const {
 
 dayjs.extend(localizedFormat);
 const displayDate = dayjs(updatedDate).format("ll");
-import { Image } from "@astrojs/image/components";
 ---
 
-<BaseLayout title={title} description={description} image={heroImage}>
+<BaseLayout title={title} description={description} image={heroImage?.src}>
   <main class="md:flex md:justify-center">
     <article class="prose prose-lg max-w-[750px] prose-img:mx-auto">
       {
         heroImage && (
-          <Image aspectRatio="16:9" width={750} height={422} format="webp" src={heroImage} alt={title} class="w-full mb-6" />
+          <Image width={750} height={422} format="webp" src={heroImage} alt={title} class="w-full mb-6" />
         )
       }
       <div class="">

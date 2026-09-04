@@ -2,17 +2,32 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { configDev } from "../siteConstants/siteSettings";
-import projects from "../data/projects.json";
+import projectsData from "../data/projects.json";
+import type { DevToArticle } from "../types";
 let apiUrl = `https://dev.to/api/articles?username=${configDev.devtoUsername}`;
 
-let last_posts = [];
+interface Project {
+  title: string;
+  img: string;
+  desc: string;
+  url: string;
+  is_foss?: boolean;
+}
+
+// projects.json currently ships empty, so its inferred type is never[]
+const projects: Project[] = projectsData;
+
+let last_posts: DevToArticle[] = [];
 try {
   const response = await fetch(apiUrl);
-  const posts = await response.json();
+  const posts: DevToArticle[] = await response.json();
   posts.sort((a, b) => b.published_at.localeCompare(a.published_at));
   last_posts = posts.slice(0, 3);
 } catch (e) {
-  console.warn("Could not fetch dev.to articles at build time:", e.message);
+  console.warn(
+    "Could not fetch dev.to articles at build time:",
+    e instanceof Error ? e.message : e,
+  );
 }
 ---
 

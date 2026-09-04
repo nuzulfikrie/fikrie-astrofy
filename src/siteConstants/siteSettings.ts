@@ -1,10 +1,5 @@
-//---
-//export dot env
-import * as dotenv from "dotenv";
-//---
-
-dotenv.config();
 //this file will store all site constant
+// (.env files are loaded automatically by Astro)
 
 export const configDev = {
   developerName: process.env.developerName ?? "Nuzul Fikrie Salam",

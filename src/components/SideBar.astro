@@ -1,8 +1,9 @@
 ---
 import SideBarFooter from "./SideBarFooter.astro";
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import SideBarMenu from "./SideBarMenu.astro";
 import { configDev } from "../siteConstants/siteSettings";
+import profileImg from "../assets/profile.jpg";
 const { sideBarActiveItemID } = Astro.props;
 ---
 
@@ -15,11 +16,10 @@ const { sideBarActiveItemID } = Astro.props;
     <div class="profile-frame">
       <a href="/" aria-label="Home">
         <Image
-          aspectRatio="1:1"
           format="webp"
           width={300}
           height={300}
-          src="/profile.jpg"
+          src={profileImg}
           alt="Profile image"
         />
       </a>

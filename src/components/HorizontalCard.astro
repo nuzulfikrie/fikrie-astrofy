@@ -1,4 +1,14 @@
 ---
+interface Props {
+  title: string;
+  img?: string;
+  desc?: string;
+  url: string;
+  badge?: string | string[];
+  tags?: string[];
+  target?: string;
+}
+
 const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
 const badges = Array.isArray(badge)
   ? badge
