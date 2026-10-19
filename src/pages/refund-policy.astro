@@ -1,0 +1,118 @@
+---
+import PolicyLayout from "../layouts/PolicyLayout.astro";
+import { business } from "../siteConstants/business";
+---
+
+<PolicyLayout
+  title="Refund Policy"
+  description="How deposits, milestone payments and refunds work for software development services."
+>
+  <p>
+    This Refund Policy applies to all software development services provided by {business.name} ({business.ssmNo}) ("we", "us"), including website and web
+    application development, custom systems, integrations, maintenance and
+    consulting. Payments are processed by our payment gateway, CHIP
+    (chip-in.asia).
+  </p>
+
+  <h2>1. Quotations and deposits</h2>
+  <ul>
+    <li>
+      Every project starts with a written quotation that sets out the scope,
+      price, payment schedule and estimated timeline.
+    </li>
+    <li>
+      Most projects require a deposit before work begins. The deposit secures
+      your place in our schedule and covers initial discovery, planning and
+      setup.
+    </li>
+    <li>
+      If you cancel in writing <strong>before any work has started</strong>,
+      the deposit is refunded in full.
+    </li>
+    <li>
+      Once work has started, the deposit is non-refundable, except where we are
+      unable to deliver the agreed work (see section 3).
+    </li>
+  </ul>
+
+  <h2>2. Milestone payments</h2>
+  <ul>
+    <li>
+      Larger projects are split into milestones. Each milestone payment covers
+      the work for that milestone only.
+    </li>
+    <li>
+      A milestone payment is refundable if we do not deliver that milestone, or
+      if the delivered work does not materially meet the agreed specification
+      and we cannot correct it within the revision period described in our <a href="/shipping-policy">Delivery &amp; Return Policy</a>.
+    </li>
+    <li>
+      Milestones that you have accepted, or that are deemed accepted, are
+      non-refundable.
+    </li>
+  </ul>
+
+  <h2>3. When you are entitled to a refund</h2>
+  <ul>
+    <li>
+      We cancel the project or are unable to deliver: you receive a refund of
+      all payments for work not yet delivered.
+    </li>
+    <li>
+      You cancel before work starts: full refund of amounts paid.
+    </li>
+    <li>
+      You cancel after work starts: refund of any amount paid in advance for
+      work not yet performed, less the deposit and the value of work completed
+      up to the date of cancellation.
+    </li>
+    <li>
+      Duplicate or incorrect charges: refunded in full.
+    </li>
+  </ul>
+
+  <h2>4. What is not refundable</h2>
+  <ul>
+    <li>Work that has been delivered and accepted.</li>
+    <li>
+      Third-party costs paid on your behalf, such as domain names, hosting,
+      software licences, app store fees and paid APIs.
+    </li>
+    <li>
+      Delays or extra costs caused by late feedback, missing content or
+      changes in scope requested by you.
+    </li>
+  </ul>
+
+  <h2>5. How to request a refund</h2>
+  <p>
+    Email <a href={`mailto:${business.email}`}>{business.email}</a> within 14
+    days of the relevant charge or delivery, with your invoice or payment
+    reference number and the reason for the request.
+  </p>
+
+  <h2>6. Timelines</h2>
+  <ul>
+    <li>We acknowledge your request within 3 business days.</li>
+    <li>We give you a decision within 7 business days of receiving it.</li>
+    <li>Approved refunds are issued within 7 business days of approval.</li>
+    <li>
+      Your bank, card issuer or e-wallet provider may take a further 7 to 14
+      business days to show the refund on your statement.
+    </li>
+  </ul>
+
+  <h2>7. Refund method</h2>
+  <p>
+    Refunds are made to the <strong>original payment method</strong> through
+    CHIP, whether that was a credit or debit card, FPX online banking, an
+    e-wallet or another method offered at checkout. If a refund to the original
+    method is not possible (for example, the card or account has been closed),
+    we will refund by bank transfer to an account in the payer's name.
+  </p>
+
+  <h2>8. Contact</h2>
+  <p>
+    Questions about this policy can be sent to <a href={`mailto:${business.email}`}>{business.email}</a> or see our <a href="/contact">Contact</a> page.
+  </p>
+</PolicyLayout>

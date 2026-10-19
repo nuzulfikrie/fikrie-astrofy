@@ -1,9 +1,26 @@
 ---
+import { business, policyLinks } from "../siteConstants/business";
 const today = new Date();
 ---
 
 <footer class="site-footer">
   <div class="tui-hr" aria-hidden="true">{"─".repeat(120)}</div>
+  <nav aria-label="Policies" class="mb-2">
+    {
+      policyLinks.map((link, i) => (
+        <>
+          {i > 0 && <span aria-hidden="true"> · </span>}
+          <a href={link.href}>{link.label}</a>
+        </>
+      ))
+    }
+  </nav>
+  <div>
+    {business.name} (SSM: {business.ssmNo}) ·
+    {business.address && <>{business.address} · </>}
+    <a href={`mailto:${business.email}`}>{business.email}</a>
+    {business.phone && <> · {business.phone}</>}
+  </div>
   <div>
     [eof] — &copy; {today.getFullYear()} Nuzul Fikrie Salam — Kuala Lumpur,
     Malaysia
