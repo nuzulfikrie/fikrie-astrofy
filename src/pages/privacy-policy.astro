@@ -142,9 +142,9 @@ import { business } from "../siteConstants/business";
   <h2>6. Contact for access, correction and enquiries</h2>
   <p>
     {business.name}<br />
-    {business.address}<br />
-    Email: <a href={`mailto:${business.email}`}>{business.email}</a><br />
-    Phone: {business.phone}
+    {business.address ?? business.location}<br />
+    Email: <a href={`mailto:${business.email}`}>{business.email}</a>
+    {business.phone && <><br />Phone: {business.phone}</>}
   </p>
   <p>
     If this policy is ever translated, the English version prevails. A Bahasa

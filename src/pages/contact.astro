@@ -17,23 +17,28 @@ import { business } from "../siteConstants/business";
     <tbody>
       <tr><th scope="row">Business name</th><td>{business.name}</td></tr>
       <tr><th scope="row">SSM registration no.</th><td>{business.ssmNo}</td></tr>
-      <tr><th scope="row">Business address</th><td>{business.address}</td></tr>
-      <tr>
-        <th scope="row">Phone</th>
-        <td>{business.phone}</td>
-      </tr>
+      {business.address ? (
+        <tr><th scope="row">Business address</th><td>{business.address}</td></tr>
+      ) : (
+        <tr><th scope="row">Location</th><td>{business.location}</td></tr>
+      )}
+      {business.phone && (
+        <tr><th scope="row">Phone</th><td>{business.phone}</td></tr>
+      )}
       <tr>
         <th scope="row">Email</th>
         <td><a href={`mailto:${business.email}`}>{business.email}</a></td>
       </tr>
-      <tr><th scope="row">Business hours</th><td>{business.hours}</td></tr>
+      {business.hours && (
+        <tr><th scope="row">Business hours</th><td>{business.hours}</td></tr>
+      )}
     </tbody>
   </table>
 
   <p>
     We aim to reply to all messages within 2 business days. Messages received
-    outside business hours or on Malaysian public holidays are answered on the
-    next business day.
+    on weekends or Malaysian public holidays are answered on the next business
+    day.
   </p>
 
   <h2>Related policies</h2>

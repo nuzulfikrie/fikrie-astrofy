@@ -16,8 +16,10 @@ const today = new Date();
     }
   </nav>
   <div>
-    {business.name} ({business.ssmNo}) · {business.address} ·
-    <a href={`mailto:${business.email}`}>{business.email}</a> · {business.phone}
+    {business.name} (SSM: {business.ssmNo}) ·
+    {business.address && <>{business.address} · </>}
+    <a href={`mailto:${business.email}`}>{business.email}</a>
+    {business.phone && <> · {business.phone}</>}
   </div>
   <div>
     [eof] — &copy; {today.getFullYear()} Nuzul Fikrie Salam — Kuala Lumpur,
