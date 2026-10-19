@@ -17,7 +17,7 @@ const today = new Date();
   </nav>
   <div>
     {business.name} (SSM: {business.ssmNo}) ·
-    {business.address && <>{business.address} · </>}
+    {business.address && <>{" "}{business.address} · </>}
     <a href={`mailto:${business.email}`}>{business.email}</a>
     {business.phone && <> · {business.phone}</>}
   </div>
