@@ -1,0 +1,153 @@
+---
+import PolicyLayout from "../layouts/PolicyLayout.astro";
+import { business } from "../siteConstants/business";
+---
+
+<PolicyLayout
+  title="Privacy Policy"
+  description="How personal data is collected, used and protected under Malaysia's Personal Data Protection Act 2010 (PDPA)."
+>
+  <p>
+    This Privacy Policy is issued by {business.name} ({business.ssmNo}) ("we",
+    "us"), the data user, under the Personal Data Protection Act 2010 (PDPA). It
+    explains what personal data we collect, why we collect it, who we share it
+    with and how you can access or correct it.
+  </p>
+
+  <h2>1. Personal data we collect</h2>
+  <ul>
+    <li>
+      <strong>Identity and contact details:</strong> name, email address, phone
+      number, company name and billing address.
+    </li>
+    <li>
+      <strong>Project information:</strong> requirements, content, files and
+      account access you provide so we can deliver the work.
+    </li>
+    <li>
+      <strong>Payment information:</strong> payments are processed by CHIP. We
+      receive the transaction reference, amount, status and payment method
+      type. We do not receive or store your full card number, CVV or online
+      banking credentials.
+    </li>
+    <li>
+      <strong>Communications:</strong> emails, messages and meeting notes
+      exchanged with us.
+    </li>
+    <li>
+      <strong>Technical data:</strong> standard server logs kept by our hosting
+      provider, such as IP address, browser type and pages visited.
+    </li>
+  </ul>
+
+  <h2>2. Purposes of processing</h2>
+  <ul>
+    <li>To respond to enquiries and prepare quotations.</li>
+    <li>To deliver, support and maintain the services you engage us for.</li>
+    <li>To issue invoices, collect payments and process refunds.</li>
+    <li>To keep business, accounting and tax records required by law.</li>
+    <li>To keep our website and systems secure.</li>
+  </ul>
+
+  <h2>3. PDPA principles and how we apply them</h2>
+
+  <h3>General Principle</h3>
+  <p>
+    We process personal data only with your consent, or where it is necessary
+    to perform a contract with you, to comply with a legal obligation, or as
+    otherwise permitted by the PDPA. We only collect data that is adequate,
+    relevant and not excessive for the purposes above.
+  </p>
+
+  <h3>Notice and Choice Principle</h3>
+  <p>
+    This policy is our written notice to you. Providing contact and billing
+    details is necessary for us to quote, deliver and invoice; if you choose
+    not to provide them, we may be unable to provide our services. You may
+    withdraw consent to further processing at any time by contacting us, subject
+    to any legal or contractual obligations we have.
+  </p>
+
+  <h3>Disclosure Principle</h3>
+  <p>
+    We do not sell your personal data. We disclose it only for the purposes
+    above, and only to:
+  </p>
+  <ul>
+    <li>
+      <strong>CHIP (chip-in.asia)</strong>, our payment processor, and the
+      banks, card networks and e-wallet providers it works with, to process
+      payments and refunds;
+    </li>
+    <li>
+      hosting, email, cloud storage and code-hosting providers we use to run
+      our website and deliver projects (for example Google Firebase Hosting
+      and GitHub);
+    </li>
+    <li>accountants, auditors and professional advisers;</li>
+    <li>
+      government agencies, regulators or courts where required by law.
+    </li>
+  </ul>
+  <p>
+    Some of these providers may store data outside Malaysia. Where that happens
+    we take reasonable steps to ensure your data receives a comparable level of
+    protection.
+  </p>
+
+  <h3>Security Principle</h3>
+  <p>
+    We take practical steps to protect personal data from loss, misuse,
+    modification, unauthorised access and disclosure. These include encrypted
+    connections (HTTPS), access controls and multi-factor authentication on our
+    accounts, and limiting access to people who need it.
+  </p>
+
+  <h3>Retention Principle</h3>
+  <p>
+    We keep personal data only as long as needed for the purposes above.
+    Invoices, payment and accounting records are kept for at least 7 years to
+    meet Malaysian tax and company record-keeping requirements. Other project
+    data is deleted or anonymised once it is no longer needed.
+  </p>
+
+  <h3>Data Integrity Principle</h3>
+  <p>
+    We take reasonable steps to keep personal data accurate, complete, not
+    misleading and up to date. Please tell us if any of your details change.
+  </p>
+
+  <h3>Access Principle</h3>
+  <p>
+    You have the right to request access to, and correction of, the personal
+    data we hold about you. Send your request in writing using the contact
+    details below. We will respond within 21 days of receiving it, as required
+    by the PDPA. We may need to verify your identity first, and may refuse a
+    request where the PDPA allows us to.
+  </p>
+
+  <h2>4. Cookies</h2>
+  <p>
+    This website does not use advertising or analytics cookies. Our hosting
+    provider may set technical cookies or keep logs needed to serve the site
+    securely.
+  </p>
+
+  <h2>5. Changes to this policy</h2>
+  <p>
+    We may update this policy from time to time. The latest version is always
+    on this page, with the date it was last updated.
+  </p>
+
+  <h2>6. Contact for access, correction and enquiries</h2>
+  <p>
+    {business.name}<br />
+    {business.address}<br />
+    Email: <a href={`mailto:${business.email}`}>{business.email}</a><br />
+    Phone: {business.phone}
+  </p>
+  <p>
+    If this policy is ever translated, the English version prevails. A Bahasa
+    Malaysia version is available on request.
+  </p>
+</PolicyLayout>

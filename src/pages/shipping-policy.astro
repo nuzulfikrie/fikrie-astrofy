@@ -1,0 +1,122 @@
+---
+import PolicyLayout from "../layouts/PolicyLayout.astro";
+import { business } from "../siteConstants/business";
+---
+
+<PolicyLayout
+  title="Delivery & Return Policy"
+  description="How digital software development work is delivered, revised, accepted and cancelled. No physical goods are shipped."
+>
+  <p>
+    {business.name} ({business.ssmNo}) provides digital software development
+    services only. <strong>No physical goods are sold or shipped</strong>, so
+    there are no shipping fees or courier deliveries. This policy explains how
+    work is delivered to you and what happens if it is not right.
+  </p>
+
+  <h2>1. How work is delivered</h2>
+  <p>Depending on the project, deliverables are provided electronically by:</p>
+  <ul>
+    <li>
+      <strong>Source code repository:</strong> access to, or transfer of, a Git
+      repository (for example GitHub) containing the project code.
+    </li>
+    <li>
+      <strong>Deployment:</strong> installing the work on your hosting, server,
+      cloud account or app store listing, or on hosting we agree in the
+      quotation.
+    </li>
+    <li>
+      <strong>Files:</strong> documents, designs, builds or exports sent by
+      email or a secure cloud storage link.
+    </li>
+  </ul>
+  <p>
+    We notify you by email when each deliverable or milestone is ready for
+    review.
+  </p>
+
+  <h2>2. Delivery timelines</h2>
+  <ul>
+    <li>
+      Estimated timelines are set out in the quotation for each project.
+    </li>
+    <li>
+      Work starts once the deposit is received and we have the content, access
+      and information needed to begin.
+    </li>
+    <li>
+      Timelines are estimates. They may move if feedback, content or approvals
+      arrive late, or if the scope changes. We will tell you as early as
+      possible about any delay.
+    </li>
+  </ul>
+
+  <h2>3. Review and revisions</h2>
+  <ul>
+    <li>
+      Each milestone includes up to 2 rounds of revisions within the agreed
+      scope, unless the quotation says otherwise.
+    </li>
+    <li>
+      Changes outside the agreed scope are quoted separately before any work
+      is done.
+    </li>
+  </ul>
+
+  <h2>4. Acceptance</h2>
+  <ul>
+    <li>
+      You have 7 days from delivery to review each milestone and either accept
+      it or send us a written list of issues.
+    </li>
+    <li>
+      A milestone is deemed accepted if we receive no written feedback within
+      that period, or once you start using it in production.
+    </li>
+    <li>
+      Defects reported within 30 days of final acceptance that are caused by
+      our work are fixed at no extra charge.
+    </li>
+  </ul>
+
+  <h2>5. Returns</h2>
+  <p>
+    Because our work is digital and custom-made, it cannot be physically
+    returned. If a deliverable does not meet the agreed specification, we will
+    first correct it through revisions or defect fixes. If we cannot, you may be
+    entitled to a refund under our <a href="/refund-policy">Refund Policy</a>.
+  </p>
+
+  <h2>6. Cancellation</h2>
+  <ul>
+    <li>
+      You may cancel a project at any time by notifying us in writing.
+    </li>
+    <li>
+      On cancellation, you pay for work completed up to the cancellation date
+      and any non-refundable third-party costs. Refunds of any balance follow
+      our <a href="/refund-policy">Refund Policy</a>.
+    </li>
+    <li>
+      We will hand over all completed work that has been paid for.
+    </li>
+    <li>
+      We may cancel a project if invoices remain unpaid or the project cannot
+      proceed for reasons outside our control. In that case, you are refunded
+      for any prepaid work not yet delivered.
+    </li>
+  </ul>
+
+  <h2>7. Ownership and handover</h2>
+  <p>
+    Ownership of the project deliverables passes to you once all invoices for
+    the project are paid in full, unless the quotation states otherwise.
+    Third-party and open-source components remain under their own licences.
+  </p>
+
+  <h2>8. Contact</h2>
+  <p>
+    Questions about delivery or cancellation can be sent to <a href={`mailto:${business.email}`}>{business.email}</a> or see our <a href="/contact">Contact</a> page.
+  </p>
+</PolicyLayout>

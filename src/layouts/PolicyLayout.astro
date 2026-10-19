@@ -1,0 +1,25 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import { business } from "../siteConstants/business";
+
+export interface Props {
+  title: string;
+  description: string;
+  showUpdated?: boolean;
+}
+
+const { title, description, showUpdated = true } = Astro.props;
+---
+
+<BaseLayout title={`${title} | ${business.name}`} description={description}>
+  <div class="md:flex md:justify-center">
+    <article class="prose prose-lg max-w-[750px]">
+      <h1 class="title my-2 text-4xl font-bold">{title}</h1>
+      {showUpdated && (
+        <div class="tl-sub">Last updated: <time>{business.lastUpdated}</time></div>
+      )}
+      <div class="tui-hr" aria-hidden="true">{"─".repeat(120)}</div>
+      <slot />
+    </article>
+  </div>
+</BaseLayout>
