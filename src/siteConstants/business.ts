@@ -18,7 +18,10 @@ export const business: {
 } = {
   name: process.env.businessName ?? "NUZUL FIKRIE BIN SALAM",
   ssmNo: process.env.businessSsmNo ?? "202403321561 (KT0581196-A)",
-  address: optional(process.env.businessAddress),
+  address: optional(
+    process.env.businessAddress ??
+      "A-20-3A, Sfera Residency, Jln Atmosphere Utama 1, 43300 Seri Kembangan, Selangor, Malaysia",
+  ),
   phone: optional(process.env.businessPhone),
   email: process.env.businessEmail ?? "nuzulfikrie@fikriesalam.dev",
   location: process.env.businessLocation ?? "Kuala Lumpur, Malaysia",
